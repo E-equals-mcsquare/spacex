@@ -1,6 +1,6 @@
 import path from 'path';
 import express from 'express';
-// import React from 'react';
+// var React = require('react');
 import ReactDOMServer from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import App from '../src/App';

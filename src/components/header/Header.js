@@ -1,4 +1,4 @@
-import React from 'react'
+var React = require('react')
 import styles from './Header.module.css'
 
 function Header() {
