@@ -34,7 +34,7 @@ class TilesGroup extends Component {
       })
       .catch((error) => {
         this.setState({
-          data: "No Data Available",
+          data: ["No Data Available"],
         });
       });
   }
