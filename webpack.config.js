@@ -42,9 +42,19 @@ module.exports = [
       },
       minimizer: [new TerserJSPlugin({})],
     },
+    plugins: [
+      new webpack.ProvidePlugin({
+        "React": "react",
+      }),
+    ],
   },
   {
     mode: 'production',
+    plugins: [
+      new webpack.ProvidePlugin({
+        "React": "react",
+      }),
+    ],
     target: 'node',
     node: {
       __dirname: true,
