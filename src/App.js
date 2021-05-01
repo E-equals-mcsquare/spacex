@@ -2,7 +2,7 @@ import "./App.css";
 import {
   Switch,
   Route,
-  HashRouter as Router,
+  Router as Router,
   Redirect,
 } from "react-router-dom";
 import Dashboard from "./components/dashboard/Dashboard";
