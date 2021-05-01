@@ -1,6 +1,7 @@
 const path = require('path');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
+const webpack = require('webpack')
 
 module.exports = [
   {
