@@ -1,11 +1,12 @@
 import path from 'path';
 import express from 'express';
-import React from 'react';
+// import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import App from '../src/App';
 import { indexHtml } from './indexHtml';
-
+var React = require('react');
+var ReactDOM = require('react-dom');
 export const app = express();
 
 // Serve generated assets
