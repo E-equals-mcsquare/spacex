@@ -59,7 +59,7 @@ class FilterPanel extends Component {
     // for (var i = 0; i < allElements.length; i++) {
     //   allElements[i].className = styles.filter;
     // }
-    // if (this.state.yearevent.target != undefined) {
+    // if (this.state.yearevent.target !== undefined) {
     //   this.state.yearevent.target.className = styles.filterselected;
     // }
   }
@@ -76,7 +76,7 @@ class FilterPanel extends Component {
     if (currentClass.includes("filterselected")) {
       event.target.className = styles.filter;
       this.props.history.replace(
-        `/` + "0" + `/` + successfullaunch + `/` + successfulland
+        `/0/` + successfullaunch + `/` + successfulland
       );
     } else {
       event.target.className = styles.filterselected;
@@ -100,7 +100,7 @@ class FilterPanel extends Component {
     if (currentClass.includes("filterselected")) {
       event.target.className = styles.filter;
       this.props.history.replace(
-        `/` + launchyear + `/` + "0" + `/` + successfulland
+        `/` + launchyear + `/0/` + successfulland
       );
     } else {
       event.target.className = styles.filterselected;
@@ -124,7 +124,7 @@ class FilterPanel extends Component {
     if (currentClass.includes("filterselected")) {
       event.target.className = styles.filter;
       this.props.history.replace(
-        `/` + launchyear + `/` + successfullaunch + `/` + "0"
+        `/` + launchyear + `/` + successfullaunch + `/0`
       );
     } else {
       event.target.className = styles.filterselected;
@@ -143,15 +143,15 @@ class FilterPanel extends Component {
     let successfullaunch = locationParams[locationParams.length - 2];
     let launchyear = locationParams[locationParams.length - 3];
 
-    if (launchyear == 0 && successfullaunch == 0 && successfulland == 0) {
+    if (launchyear === 0 && successfullaunch === 0 && successfulland === 0) {
       this.props.dispatch({
         type: "serviceUrl",
         serviceUrl: process.env.REACT_APP_SERVICE_URL,
       });
     } else if (
-      launchyear == 0 &&
-      successfullaunch == 0 &&
-      successfulland != 0
+      launchyear === 0 &&
+      successfullaunch === 0 &&
+      successfulland !== 0
     ) {
       this.props.dispatch({
         type: "serviceUrl",
@@ -161,9 +161,9 @@ class FilterPanel extends Component {
           successfulland.toLowerCase(),
       });
     } else if (
-      launchyear == 0 &&
-      successfullaunch != 0 &&
-      successfulland == 0
+      launchyear === 0 &&
+      successfullaunch !== 0 &&
+      successfulland === 0
     ) {
       this.props.dispatch({
         type: "serviceUrl",
@@ -173,9 +173,9 @@ class FilterPanel extends Component {
           successfullaunch.toLowerCase(),
       });
     } else if (
-      launchyear == 0 &&
-      successfullaunch != 0 &&
-      successfulland != 0
+      launchyear === 0 &&
+      successfullaunch !== 0 &&
+      successfulland !== 0
     ) {
       this.props.dispatch({
         type: "serviceUrl",
@@ -187,9 +187,9 @@ class FilterPanel extends Component {
           successfulland.toLowerCase(),
       });
     } else if (
-      launchyear != 0 &&
-      successfullaunch == 0 &&
-      successfulland == 0
+      launchyear !== 0 &&
+      successfullaunch === 0 &&
+      successfulland === 0
     ) {
       this.props.dispatch({
         type: "serviceUrl",
@@ -197,9 +197,9 @@ class FilterPanel extends Component {
           process.env.REACT_APP_SERVICE_URL + "&launch_year=" + launchyear,
       });
     } else if (
-      launchyear != 0 &&
-      successfullaunch == 0 &&
-      successfulland != 0
+      launchyear !== 0 &&
+      successfullaunch === 0 &&
+      successfulland !== 0
     ) {
       this.props.dispatch({
         type: "serviceUrl",
@@ -211,9 +211,9 @@ class FilterPanel extends Component {
           successfulland.toLowerCase(),
       });
     } else if (
-      launchyear != 0 &&
-      successfullaunch != 0 &&
-      successfulland == 0
+      launchyear !== 0 &&
+      successfullaunch !== 0 &&
+      successfulland === 0
     ) {
       this.props.dispatch({
         type: "serviceUrl",
@@ -225,9 +225,9 @@ class FilterPanel extends Component {
           successfullaunch.toLowerCase(),
       });
     } else if (
-      launchyear != 0 &&
-      successfullaunch != 0 &&
-      successfulland != 0
+      launchyear !== 0 &&
+      successfullaunch !== 0 &&
+      successfulland !== 0
     ) {
       this.props.dispatch({
         type: "serviceUrl",
@@ -256,7 +256,7 @@ class FilterPanel extends Component {
         <div className={styles.filtergroup}>
           {this.state.dataUnique.map((obj) => {
             let filterstyleyear = "";
-            if (launchyear == obj.launch_year) {
+            if (launchyear === obj.launch_year) {
               filterstyleyear = styles.filterselected;
             } else {
               filterstyleyear = styles.filter;
@@ -274,8 +274,8 @@ class FilterPanel extends Component {
           {this.state.launchland.map((obj) => {
             let filterstylelaunch = "";
             if (
-              (successfullaunch == "True" && obj == "True") ||
-              (successfullaunch == "False" && obj == "False")
+              (successfullaunch === "True" && obj === "True") ||
+              (successfullaunch === "False" && obj === "False")
             ) {
               filterstylelaunch = styles.filterselected;
             } else {
@@ -296,8 +296,8 @@ class FilterPanel extends Component {
           {this.state.launchland.map((obj) => {
             let filterstyleland = "";
             if (
-              (successfulland == "True" && obj == "True") ||
-              (successfulland == "False" && obj == "False")
+              (successfulland === "True" && obj === "True") ||
+              (successfulland === "False" && obj === "False")
             ) {
               filterstyleland = styles.filterselected;
             } else {

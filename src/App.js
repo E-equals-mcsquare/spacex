@@ -15,7 +15,7 @@ let successfullaunch = locationParams[locationParams.length - 2];
 let successfulland = locationParams[locationParams.length - 1];
 
 let redirectUrl = ""
-if (launchyear == "" || successfullaunch == "" || successfulland == "") {
+if (launchyear === "" || successfullaunch === "" || successfulland === "") {
   redirectUrl = "/0/0/0"
 } else {
   redirectUrl =  "/" + launchyear + "/" + successfullaunch + "/" + successfulland

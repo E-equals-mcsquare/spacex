@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styles from "./TilesGroup.module.css";
 import Tile from "./tile/Tile";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
 class TilesGroup extends Component {
   constructor(props) {
@@ -15,15 +15,15 @@ class TilesGroup extends Component {
     this.setState({
       busystate: true,
     });
-    this.updateData()
+    this.updateData();
   }
 
   componentDidUpdate() {
-    this.updateData()
+    this.updateData();
   }
 
   updateData = () => {
-    let serviceUrl = this.props.serviceUrl
+    let serviceUrl = this.props.serviceUrl;
     fetch(serviceUrl)
       .then((response) => response.json())
       .then((json) => {
@@ -37,39 +37,47 @@ class TilesGroup extends Component {
           data: ["No Data Available"],
         });
       });
-  }
+  };
 
   render() {
     return (
       <div className={styles.tilesgroup}>
-        {this.state.data.map((obj,i) => {
-          let flightimageurl = ""
-          if (obj.links != undefined) {
+        {this.state.data.map((obj, i) => {
+          let flightimageurl = "";
+          if (obj.links !== undefined) {
             flightimageurl = obj.links.flickr_images[0];
           } else {
             flightimageurl =
               "https://www.spacex.com/static/images/mission/mission-slider-02.webp";
           }
-          
-          let missionids = obj.mission_id
-          if (missionids != undefined) {
-              missionids = ["Not Available"]
+
+          let missionids = obj.mission_id;
+          if (missionids !== undefined) {
+            missionids = ["Not Available"];
           }
-          
+
           let successfullaunch = obj.launch_success;
-          if (successfullaunch != null) {
+          if (successfullaunch !== null) {
             successfullaunch = successfullaunch.toString();
           } else {
             successfullaunch = "Not Available";
           }
-          let successfulland = obj.rocket.first_stage.cores[0].land_success;
-          if (successfulland != null) {
-            successfulland = successfulland.toString();
+
+          let successfulland = "";
+          if (obj.rocket !== undefined) {
+            successfulland = obj.rocket.first_stage.cores[0].land_success;
+            if (successfulland !== null) {
+              successfulland = successfulland.toString();
+            } else {
+              successfulland = "Not Available";
+            }
           } else {
             successfulland = "Not Available";
           }
+
           return (
-            <Tile key={i}
+            <Tile
+              key={i}
               flightimageurl={flightimageurl}
               missionids={missionids}
               missionname={obj.mission_name + " " + obj.flight_number}
@@ -87,4 +95,4 @@ class TilesGroup extends Component {
 const dashboardStateToPros = (state) => {
   return { ...state.dashboard };
 };
-export default (connect(dashboardStateToPros))(TilesGroup)
+export default connect(dashboardStateToPros)(TilesGroup);
