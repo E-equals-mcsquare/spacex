@@ -6,6 +6,9 @@
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
+    "babel-plugin-dynamic-import-node": "^2.3.3",
+    "core-js": "^3.11.1",
+    "express": "^4.17.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
@@ -14,11 +17,17 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "dev:build-server": "NODE_ENV=development webpack --config webpack.server.js --mode=development -w",
+    "dev:start": "nodemon ./server-build/index.js",
+    "dev": "npm-run-all --parallel build dev:*",
+    "start": "npm run server",
+    "build": "webpack",
+    "server": "node server/index.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve": "npm run build && npm run start"
+    "serve": "npm run build && npm run start",
+    "heroku-prebuild": "npm install --dev",
+    "heroku-postbuild": "webpack -p"
   },
   "eslintConfig": {
     "extends": [
