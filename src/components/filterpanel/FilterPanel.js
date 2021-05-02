@@ -53,15 +53,7 @@ class FilterPanel extends Component {
       });
   };
 
-  componentDidUpdate() {
-    // let allElements = document.getElementsByClassName(styles.filterselected);
-    // for (var i = 0; i < allElements.length; i++) {
-    //   allElements[i].className = styles.filter;
-    // }
-    // if (this.state.yearevent.target !== undefined) {
-    //   this.state.yearevent.target.className = styles.filterselected;
-    // }
-  }
+  componentDidUpdate() {}
 
   onFilterByYear = (event) => {
     let locationParams = window.location.href.split("/");
@@ -98,9 +90,7 @@ class FilterPanel extends Component {
     let currentClass = event.target.className;
     if (currentClass.includes("filterselected")) {
       event.target.className = styles.filter;
-      this.props.history.replace(
-        `/` + launchyear + `/0/` + successfulland
-      );
+      this.props.history.replace(`/` + launchyear + `/0/` + successfulland);
     } else {
       event.target.className = styles.filterselected;
       this.props.history.replace(
@@ -135,111 +125,171 @@ class FilterPanel extends Component {
     this.applyFilter();
   };
 
-  applyFilter = () => {
+  applyFilter = async () => {
     let locationParams = window.location.href.split("/");
 
     let successfulland = locationParams[locationParams.length - 1];
     let successfullaunch = locationParams[locationParams.length - 2];
     let launchyear = locationParams[locationParams.length - 3];
 
-    if (launchyear === '0'&& successfullaunch === '0'&& successfulland === '0') {
-      this.props.dispatch({
-        type: "serviceUrl",
-        serviceUrl: process.env.REACT_APP_SERVICE_URL,
-      });
-    } else if (
-      launchyear === '0'&&
-      successfullaunch === '0'&&
-      successfulland !== '0'
+    if (
+      launchyear === "0" &&
+      successfullaunch === "0" &&
+      successfulland === "0"
     ) {
-      this.props.dispatch({
-        type: "serviceUrl",
-        serviceUrl:
-          process.env.REACT_APP_SERVICE_URL +
-          "&land_success=" +
-          successfulland.toLowerCase(),
-      });
+      this.setState(
+        {
+          serviceUrl: process.env.REACT_APP_SERVICE_URL,
+        },
+        this.updateData(process.env.REACT_APP_SERVICE_URL)
+      );
     } else if (
-      launchyear === '0'&&
-      successfullaunch !== '0'&&
-      successfulland === '0'
+      launchyear === "0" &&
+      successfullaunch === "0" &&
+      successfulland !== "0"
     ) {
-      this.props.dispatch({
-        type: "serviceUrl",
-        serviceUrl:
+      this.setState(
+        {
+          serviceUrl:
+            process.env.REACT_APP_SERVICE_URL +
+            "&land_success=" +
+            successfulland.toLowerCase(),
+        },
+        this.updateData(
           process.env.REACT_APP_SERVICE_URL +
-          "&launch_success=" +
-          successfullaunch.toLowerCase(),
-      });
+            "&land_success=" +
+            successfulland.toLowerCase()
+        )
+      );
     } else if (
-      launchyear === '0'&&
-      successfullaunch !== '0'&&
-      successfulland !== '0'
+      launchyear === "0" &&
+      successfullaunch !== "0" &&
+      successfulland === "0"
     ) {
-      this.props.dispatch({
-        type: "serviceUrl",
-        serviceUrl:
+      this.setState(
+        {
+          serviceUrl:
+            process.env.REACT_APP_SERVICE_URL +
+            "&launch_success=" +
+            successfullaunch.toLowerCase(),
+        },
+        this.updateData(
           process.env.REACT_APP_SERVICE_URL +
+            "&launch_success=" +
+            successfullaunch.toLowerCase()
+        )
+      );
+    } else if (
+      launchyear === "0" &&
+      successfullaunch !== "0" &&
+      successfulland !== "0"
+    ) {
+      this.setState(
+        {
+          serviceUrl:
+            process.env.REACT_APP_SERVICE_URL +
+            "&launch_success=" +
+            successfullaunch.toLowerCase() +
+            "&land_success=" +
+            successfulland.toLowerCase(),
+        },
+        this.updateData(
+          process.env.REACT_APP_SERVICE_URL +
+            "&launch_success=" +
+            successfullaunch.toLowerCase() +
+            "&land_success=" +
+            successfulland.toLowerCase()
+        )
+      );
+    } else if (
+      launchyear !== "0" &&
+      successfullaunch === "0" &&
+      successfulland === "0"
+    ) {
+      this.setState(
+        {
+          serviceUrl:
+            process.env.REACT_APP_SERVICE_URL + "&launch_year=" + launchyear,
+        },
+        this.updateData(
+          process.env.REACT_APP_SERVICE_URL + "&launch_year=" + launchyear
+        )
+      );
+    } else if (
+      launchyear !== "0" &&
+      successfullaunch === "0" &&
+      successfulland !== "0"
+    ) {
+      this.setState(
+        {
+          serviceUrl:
+            process.env.REACT_APP_SERVICE_URL +
+            "&launch_year=" +
+            launchyear +
+            "&land_success=" +
+            successfulland.toLowerCase(),
+        },
+        this.updateData(
+          process.env.REACT_APP_SERVICE_URL +
+            "&launch_year=" +
+            launchyear +
+            "&land_success=" +
+            successfulland.toLowerCase()
+        )
+      );
+    } else if (
+      launchyear !== "0" &&
+      successfullaunch !== "0" &&
+      successfulland === "0"
+    ) {
+      this.setState(
+        {
+          serviceUrl:
+            process.env.REACT_APP_SERVICE_URL +
+            "&launch_year=" +
+            launchyear +
+            "&launch_success=" +
+            successfullaunch.toLowerCase(),
+        },
+        this.updateData(
+          process.env.REACT_APP_SERVICE_URL +
+            "&launch_year=" +
+            launchyear +
+            "&launch_success=" +
+            successfullaunch.toLowerCase()
+        )
+      );
+    } else if (
+      launchyear !== "0" &&
+      successfullaunch !== "0" &&
+      successfulland !== "0"
+    ) {
+      this.updateData(
+        process.env.REACT_APP_SERVICE_URL +
+          "&launch_year=" +
+          launchyear +
           "&launch_success=" +
           successfullaunch.toLowerCase() +
           "&land_success=" +
-          successfulland.toLowerCase(),
-      });
-    } else if (
-      launchyear !== '0'&&
-      successfullaunch === '0'&&
-      successfulland === 0
-    ) {
-      this.props.dispatch({
-        type: "serviceUrl",
-        serviceUrl:
-          process.env.REACT_APP_SERVICE_URL + "&launch_year=" + launchyear,
-      });
-    } else if (
-      launchyear !== '0'&&
-      successfullaunch === '0'&&
-      successfulland !== '0'
-    ) {
-      this.props.dispatch({
-        type: "serviceUrl",
-        serviceUrl:
-          process.env.REACT_APP_SERVICE_URL +
-          "&launch_year=" +
-          launchyear +
-          "&land_success=" +
-          successfulland.toLowerCase(),
-      });
-    } else if (
-      launchyear !== '0'&&
-      successfullaunch !== '0'&&
-      successfulland === 0
-    ) {
-      this.props.dispatch({
-        type: "serviceUrl",
-        serviceUrl:
-          process.env.REACT_APP_SERVICE_URL +
-          "&launch_year=" +
-          launchyear +
-          "&launch_success=" +
-          successfullaunch.toLowerCase(),
-      });
-    } else if (
-      launchyear !== '0'&&
-      successfullaunch !== '0'&&
-      successfulland !== '0'
-    ) {
-      this.props.dispatch({
-        type: "serviceUrl",
-        serviceUrl:
-          process.env.REACT_APP_SERVICE_URL +
-          "&launch_year=" +
-          launchyear +
-          "&launch_success=" +
-          successfullaunch.toLowerCase() +
-          "&land_success=" +
-          successfulland.toLowerCase(),
-      });
+          successfulland.toLowerCase()
+      );
     }
+  };
+
+  updateData = (serviceUrl) => {
+    fetch(serviceUrl)
+      .then((response) => response.json())
+      .then((json) => {
+        this.props.dispatch({
+          type: "tiledata",
+          tiledata: json,
+        });
+      })
+      .catch((error) => {
+        this.setState({
+          data: ["No Data Available"],
+        });
+      });
   };
 
   render() {
@@ -262,7 +312,11 @@ class FilterPanel extends Component {
             }
 
             return (
-              <div key={obj.launch_year} className={filterstyleyear} onClick={this.onFilterByYear}>
+              <div
+                key={obj.launch_year}
+                className={filterstyleyear}
+                onClick={this.onFilterByYear}
+              >
                 {obj.launch_year}
               </div>
             );
@@ -281,7 +335,8 @@ class FilterPanel extends Component {
               filterstylelaunch = styles.filter;
             }
             return (
-              <div key={obj}
+              <div
+                key={obj}
                 className={filterstylelaunch}
                 onClick={this.onFilterByLaunch}
               >
@@ -303,7 +358,11 @@ class FilterPanel extends Component {
               filterstyleland = styles.filter;
             }
             return (
-              <div key={obj} className={filterstyleland} onClick={this.onFilterByLand}>
+              <div
+                key={obj}
+                className={filterstyleland}
+                onClick={this.onFilterByLand}
+              >
                 {obj}
               </div>
             );

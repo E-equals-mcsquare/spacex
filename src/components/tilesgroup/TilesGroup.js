@@ -15,11 +15,15 @@ class TilesGroup extends Component {
     this.setState({
       busystate: true,
     });
-    this.updateData();
+    // this.updateData();
   }
 
   componentDidUpdate() {
-    this.updateData();
+    // this.updateData();
+    // this.setState({
+    //   s: 'g' 
+    // })
+    // console.log('hhjj')
   }
 
   updateData = () => {
@@ -40,9 +44,10 @@ class TilesGroup extends Component {
   };
 
   render() {
+    
     return (
       <div className={styles.tilesgroup}>
-        {this.state.data.map((obj, i) => {
+        {this.props.tiledata.map((obj, i) => {
           let flightimageurl = "";
           if (obj.links !== undefined) {
             if (obj.links.flickr_images.length > 0) {
@@ -63,7 +68,11 @@ class TilesGroup extends Component {
 
           let successfullaunch = obj.launch_success;
           if (successfullaunch !== null) {
-            successfullaunch = successfullaunch.toString();
+            if (successfullaunch !== undefined) {
+              successfullaunch = successfullaunch.toString();
+            } else {
+              successfullaunch = "Not Available";
+            }
           } else {
             successfullaunch = "Not Available";
           }
