@@ -15,33 +15,11 @@ class TilesGroup extends Component {
     this.setState({
       busystate: true,
     });
-    // this.updateData();
   }
 
   componentDidUpdate() {
-    // this.updateData();
-    // this.setState({
-    //   s: 'g' 
-    // })
-    // console.log('hhjj')
+    
   }
-
-  updateData = () => {
-    let serviceUrl = this.props.serviceUrl;
-    fetch(serviceUrl)
-      .then((response) => response.json())
-      .then((json) => {
-        this.setState({
-          data: json,
-          busystate: false,
-        });
-      })
-      .catch((error) => {
-        this.setState({
-          data: ["No Data Available"],
-        });
-      });
-  };
 
   render() {
     
