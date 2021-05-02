@@ -44,7 +44,7 @@ class TilesGroup extends Component {
       <div className={styles.tilesgroup}>
         {this.state.data.map((obj,i) => {
           let flightimageurl = ""
-          if (obj.links.flickr_images.length > 0) {
+          if (obj.links != undefined) {
             flightimageurl = obj.links.flickr_images[0];
           } else {
             flightimageurl =
