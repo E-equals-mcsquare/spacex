@@ -9,7 +9,7 @@ function Tile(props) {
           <div className={styles.kpititle}>Mission Ids:</div>
           {props.missionids.map((obj) => {
               return (
-                <div className={styles.kpivalue}>&#8226; {obj}</div>
+                <div key={obj} className={styles.kpivalue}>&#8226; {obj}</div>
               )
           })}
           <div className={styles.kpititle}>Launch Year: <span className={styles.kpivalue}>{props.launchyear}</span></div>

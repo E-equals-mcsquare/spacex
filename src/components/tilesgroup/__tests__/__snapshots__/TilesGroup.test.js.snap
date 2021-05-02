@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tile renders Tile 1`] = `
+<div
+  className="tile"
+>
+  <img
+    className="flightlogo"
+    src="https://sampleimage.com"
+  />
+  <div
+    className="missiontitle"
+  >
+    Mission 1
+  </div>
+  <div
+    className="kpititle"
+  >
+    Mission Ids:
+  </div>
+  <div
+    className="kpivalue"
+    key="ABC"
+  >
+    • 
+    ABC
+  </div>
+  <div
+    className="kpivalue"
+    key="DEF"
+  >
+    • 
+    DEF
+  </div>
+  <div
+    className="kpititle"
+  >
+    Launch Year: 
+    <span
+      className="kpivalue"
+    >
+      2014
+    </span>
+  </div>
+  <div
+    className="kpititle"
+  >
+    Successful Launch: 
+    <span
+      className="kpivalue"
+    >
+      true
+    </span>
+  </div>
+  <div
+    className="kpititle"
+  >
+    Successful Landing: 
+    <span
+      className="kpivalue"
+    >
+      false
+    </span>
+  </div>
+</div>
+`;

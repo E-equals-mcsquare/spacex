@@ -42,7 +42,7 @@ class TilesGroup extends Component {
   render() {
     return (
       <div className={styles.tilesgroup}>
-        {this.state.data.map((obj) => {
+        {this.state.data.map((obj,i) => {
           let flightimageurl = obj.links.flickr_images[2];
           if (!flightimageurl) {
             flightimageurl =
@@ -67,7 +67,7 @@ class TilesGroup extends Component {
             successfulland = "Not Available";
           }
           return (
-            <Tile
+            <Tile key={i}
               flightimageurl={flightimageurl}
               missionids={missionids}
               missionname={obj.mission_name + " " + obj.flight_number}

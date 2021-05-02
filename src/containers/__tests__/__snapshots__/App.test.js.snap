@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders App 1`] = `
+<div
+  className="App"
+>
+  <HashRouter>
+    <Switch>
+      <Route
+        path="/"
+      >
+        <Redirect
+          to="/0/0/0"
+        />
+        <Header />
+        <Connect(Dashboard) />
+        <Footer />
+      </Route>
+      <Route
+        default={true}
+        path="/:launchyear/:successfullaunch/:successfulland"
+      >
+        <Header />
+        <Connect(Dashboard) />
+        <Footer />
+      </Route>
+    </Switch>
+  </HashRouter>
+</div>
+`;
