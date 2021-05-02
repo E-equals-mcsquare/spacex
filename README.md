@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Application Screenshots
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Screenshot 2021-05-03 at 1 25 29 AM](https://user-images.githubusercontent.com/36430328/116825861-c43e2b80-abae-11eb-8049-b1aa4680fc63.png)
+![Screenshot 2021-05-03 at 1 23 32 AM](https://user-images.githubusercontent.com/36430328/116825878-e172fa00-abae-11eb-8207-6ff7a7a876a8.png)
+![Screenshot 2021-05-03 at 1 23 51 AM](https://user-images.githubusercontent.com/36430328/116825884-e59f1780-abae-11eb-8e2c-ec5b1761a16e.png)
+![Screenshot 2021-05-03 at 1 24 01 AM](https://user-images.githubusercontent.com/36430328/116825885-e6d04480-abae-11eb-8891-e9da6a4edfda.png)
+![Screenshot 2021-05-03 at 1 24 05 AM](https://user-images.githubusercontent.com/36430328/116825887-e768db00-abae-11eb-95ce-78b893cee0a7.png)
+![Screenshot 2021-05-03 at 1 24 23 AM](https://user-images.githubusercontent.com/36430328/116825888-e8017180-abae-11eb-95a8-9f4149ce2765.png)
+![Screenshot 2021-05-03 at 1 24 30 AM](https://user-images.githubusercontent.com/36430328/116825889-e8017180-abae-11eb-8622-1988b5f3bbfe.png)
 
-## Available Scripts
 
-In the project directory, you can run:
+# Lighthouse Screenshots
 
-### `npm start`
+![Screenshot 2021-05-03 at 1 20 33 AM](https://user-images.githubusercontent.com/36430328/116825902-fea7c880-abae-11eb-8805-3d575d9125c9.png)
+![Screenshot 2021-05-03 at 1 20 52 AM](https://user-images.githubusercontent.com/36430328/116825910-05ced680-abaf-11eb-8a12-4a979de5b200.png)
+![Screenshot 2021-05-03 at 1 20 55 AM](https://user-images.githubusercontent.com/36430328/116825914-08c9c700-abaf-11eb-8aa4-3d99657b3338.png)
+![Screenshot 2021-05-03 at 1 21 00 AM](https://user-images.githubusercontent.com/36430328/116825918-0b2c2100-abaf-11eb-9993-a18e0fe4fdb6.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# CircleCI Screenshots
 
-### `npm test`
+![Screenshot 2021-05-03 at 1 26 55 AM](https://user-images.githubusercontent.com/36430328/116825937-2a2ab300-abaf-11eb-869e-f7bfe9f08578.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+# Heroku Screenshots
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Screenshot 2021-05-03 at 1 31 11 AM](https://user-images.githubusercontent.com/36430328/116825973-52b2ad00-abaf-11eb-92ec-03d23ac35f95.png)
+![Screenshot 2021-05-03 at 1 31 29 AM](https://user-images.githubusercontent.com/36430328/116825976-56deca80-abaf-11eb-9032-c4b966af8449.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
