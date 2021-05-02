@@ -52,7 +52,7 @@ class TilesGroup extends Component {
           }
           
           let missionids = obj.mission_id
-          if (missionids.length < 1) {
+          if (missionids != undefined) {
               missionids = ["Not Available"]
           }
           
