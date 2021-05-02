@@ -45,7 +45,12 @@ class TilesGroup extends Component {
         {this.state.data.map((obj, i) => {
           let flightimageurl = "";
           if (obj.links !== undefined) {
-            flightimageurl = obj.links.flickr_images[0];
+            if (obj.links.flickr_images.length > 0) {
+              flightimageurl = obj.links.flickr_images[0];
+            } else {
+              flightimageurl =
+                "https://www.spacex.com/static/images/mission/mission-slider-02.webp";
+            }
           } else {
             flightimageurl =
               "https://www.spacex.com/static/images/mission/mission-slider-02.webp";

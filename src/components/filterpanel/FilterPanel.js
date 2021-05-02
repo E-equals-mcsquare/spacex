@@ -26,7 +26,6 @@ class FilterPanel extends Component {
   }
 
   onLoadYears = () => {
-    debugger;
     let serviceUrl = process.env.REACT_APP_SERVICE_URL;
     fetch(serviceUrl)
       .then((response) => response.json())
@@ -143,15 +142,15 @@ class FilterPanel extends Component {
     let successfullaunch = locationParams[locationParams.length - 2];
     let launchyear = locationParams[locationParams.length - 3];
 
-    if (launchyear === 0 && successfullaunch === 0 && successfulland === 0) {
+    if (launchyear === '0'&& successfullaunch === '0'&& successfulland === '0') {
       this.props.dispatch({
         type: "serviceUrl",
         serviceUrl: process.env.REACT_APP_SERVICE_URL,
       });
     } else if (
-      launchyear === 0 &&
-      successfullaunch === 0 &&
-      successfulland !== 0
+      launchyear === '0'&&
+      successfullaunch === '0'&&
+      successfulland !== '0'
     ) {
       this.props.dispatch({
         type: "serviceUrl",
@@ -161,9 +160,9 @@ class FilterPanel extends Component {
           successfulland.toLowerCase(),
       });
     } else if (
-      launchyear === 0 &&
-      successfullaunch !== 0 &&
-      successfulland === 0
+      launchyear === '0'&&
+      successfullaunch !== '0'&&
+      successfulland === '0'
     ) {
       this.props.dispatch({
         type: "serviceUrl",
@@ -173,9 +172,9 @@ class FilterPanel extends Component {
           successfullaunch.toLowerCase(),
       });
     } else if (
-      launchyear === 0 &&
-      successfullaunch !== 0 &&
-      successfulland !== 0
+      launchyear === '0'&&
+      successfullaunch !== '0'&&
+      successfulland !== '0'
     ) {
       this.props.dispatch({
         type: "serviceUrl",
@@ -187,8 +186,8 @@ class FilterPanel extends Component {
           successfulland.toLowerCase(),
       });
     } else if (
-      launchyear !== 0 &&
-      successfullaunch === 0 &&
+      launchyear !== '0'&&
+      successfullaunch === '0'&&
       successfulland === 0
     ) {
       this.props.dispatch({
@@ -197,9 +196,9 @@ class FilterPanel extends Component {
           process.env.REACT_APP_SERVICE_URL + "&launch_year=" + launchyear,
       });
     } else if (
-      launchyear !== 0 &&
-      successfullaunch === 0 &&
-      successfulland !== 0
+      launchyear !== '0'&&
+      successfullaunch === '0'&&
+      successfulland !== '0'
     ) {
       this.props.dispatch({
         type: "serviceUrl",
@@ -211,8 +210,8 @@ class FilterPanel extends Component {
           successfulland.toLowerCase(),
       });
     } else if (
-      launchyear !== 0 &&
-      successfullaunch !== 0 &&
+      launchyear !== '0'&&
+      successfullaunch !== '0'&&
       successfulland === 0
     ) {
       this.props.dispatch({
@@ -225,9 +224,9 @@ class FilterPanel extends Component {
           successfullaunch.toLowerCase(),
       });
     } else if (
-      launchyear !== 0 &&
-      successfullaunch !== 0 &&
-      successfulland !== 0
+      launchyear !== '0'&&
+      successfullaunch !== '0'&&
+      successfulland !== '0'
     ) {
       this.props.dispatch({
         type: "serviceUrl",
@@ -263,7 +262,7 @@ class FilterPanel extends Component {
             }
 
             return (
-              <div className={filterstyleyear} onClick={this.onFilterByYear}>
+              <div key={obj.launch_year} className={filterstyleyear} onClick={this.onFilterByYear}>
                 {obj.launch_year}
               </div>
             );
@@ -282,7 +281,7 @@ class FilterPanel extends Component {
               filterstylelaunch = styles.filter;
             }
             return (
-              <div
+              <div key={obj}
                 className={filterstylelaunch}
                 onClick={this.onFilterByLaunch}
               >
@@ -304,7 +303,7 @@ class FilterPanel extends Component {
               filterstyleland = styles.filter;
             }
             return (
-              <div className={filterstyleland} onClick={this.onFilterByLand}>
+              <div key={obj} className={filterstyleland} onClick={this.onFilterByLand}>
                 {obj}
               </div>
             );
